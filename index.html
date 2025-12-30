@@ -1,41 +1,219 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
-    <title>Garaj Defteri - Hesap Silme</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garaj Defteri - Hesap Silme / Account Deletion</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
             line-height: 1.6;
+            color: #333;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .lang-switcher {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .lang-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        .lang-btn:hover {
+            background-color: #0056b3;
+        }
+        .lang-btn.active {
+            background-color: #0056b3;
+        }
+        .content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
         }
         h1 {
-            color: #333;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 28px;
         }
-        .contact {
-            background-color: #f4f4f4;
+        h2 {
+            color: #34495e;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+        p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+        ol {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+        .warning-box {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
             padding: 15px;
+            margin: 20px 0;
             border-radius: 5px;
-            margin-top: 20px;
+        }
+        .contact-box {
+            background-color: #e7f3ff;
+            border-left: 4px solid #007bff;
+            padding: 20px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        .contact-box strong {
+            color: #0056b3;
+            font-size: 16px;
+        }
+        .email-link {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .email-link:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <h1>Hesap Silme</h1>
-    <p>Garaj Defteri uygulamasındaki hesabınızı silmek için:</p>
-    <ol>
-        <li>Uygulamayı açın</li>
-        <li>Profil bölümüne gidin</li>
-        <li>"Hesabı Sil" butonuna tıklayın</li>
-    </ol>
-    <p>Hesabınız ve tüm verileriniz kalıcı olarak silinecektir.</p>
-    
-    <div class="contact">
-        <strong>Hesabınızı silemiyorsanız veya yardıma ihtiyacınız varsa:</strong><br>
-        E-posta: <a href="mailto:garajdefter.app@gmail.com">garajdefter.app@gmail.com</a>
+    <div class="container">
+        <div class="header">
+            <h1>🚗 Garaj Defteri</h1>
+            <p>Account Deletion / Hesap Silme</p>
+        </div>
+
+        <div class="lang-switcher">
+            <button class="lang-btn active" onclick="switchLang('tr')">🇹🇷 Türkçe</button>
+            <button class="lang-btn" onclick="switchLang('en')">🇬🇧 English</button>
+        </div>
+
+        <!-- TURKISH VERSION -->
+        <div class="content content-section active" id="tr">
+            <h1>Hesap Silme</h1>
+            
+            <h2>Uygulama İçinden Hesap Silme</h2>
+            <p>Garaj Defteri uygulamasındaki hesabınızı silmek için aşağıdaki adımları izleyin:</p>
+            <ol>
+                <li>Garaj Defteri uygulamasını açın</li>
+                <li><strong>Profil</strong> bölümüne gidin</li>
+                <li><strong>"Hesabı Sil"</strong> butonuna tıklayın</li>
+                <li>Silme işlemini onaylayın</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>⚠️ Önemli:</strong> Hesabınızı sildiğinizde tüm verileriniz (araç bilgileri, bakım kayıtları, gider analizi, sigorta bilgileri vb.) kalıcı olarak silinecektir. Bu işlem geri alınamaz.
+            </div>
+
+            <h2>E-posta ile Hesap Silme Talebi</h2>
+            <p>Eğer uygulamadan hesabınızı silemiyorsanız veya herhangi bir sorun yaşıyorsanız, aşağıdaki e-posta adresinden bizimle iletişime geçebilirsiniz:</p>
+
+            <div class="contact-box">
+                <strong>📧 İletişim:</strong><br><br>
+                E-posta: <a href="mailto:garajdefteri.app@gmail.com" class="email-link">garajdefteri.app@gmail.com</a>
+                <br><br>
+                <p><strong>E-posta içeriği:</strong></p>
+                <ul>
+                    <li>Kayıtlı e-posta adresiniz</li>
+                    <li>Hesap silme talebiniz</li>
+                    <li>(İsteğe bağlı) Silme sebebiniz</li>
+                </ul>
+                <br>
+                <p>Talebiniz <strong>7 iş günü</strong> içinde işleme alınacak ve hesabınız tamamen silinecektir. İşlem tamamlandığında size e-posta ile bilgi verilecektir.</p>
+            </div>
+        </div>
+
+        <!-- ENGLISH VERSION -->
+        <div class="content content-section" id="en">
+            <h1>Account Deletion</h1>
+            
+            <h2>Delete Account from App</h2>
+            <p>To delete your Garaj Defteri account, please follow these steps:</p>
+            <ol>
+                <li>Open the Garaj Defteri app</li>
+                <li>Go to the <strong>Profile</strong> section</li>
+                <li>Click the <strong>"Delete Account"</strong> button</li>
+                <li>Confirm the deletion</li>
+            </ol>
+
+            <div class="warning-box">
+                <strong>⚠️ Important:</strong> When you delete your account, all your data (vehicle information, maintenance records, expense analysis, insurance information, etc.) will be permanently deleted. This action cannot be undone.
+            </div>
+
+            <h2>Request Account Deletion via Email</h2>
+            <p>If you are unable to delete your account from the app or experiencing any issues, you can contact us at the following email address:</p>
+
+            <div class="contact-box">
+                <strong>📧 Contact:</strong><br><br>
+                Email: <a href="mailto:garajdefteri.app@gmail.com" class="email-link">garajdefteri.app@gmail.com</a>
+                <br><br>
+                <p><strong>Please include in your email:</strong></p>
+                <ul>
+                    <li>Your registered email address</li>
+                    <li>Account deletion request</li>
+                    <li>(Optional) Reason for deletion</li>
+                </ul>
+                <br>
+                <p>Your request will be processed within <strong>7 business days</strong> and your account will be completely deleted. You will receive an email confirmation once the process is complete.</p>
+            </div>
+        </div>
     </div>
+
+    <script>
+        function switchLang(lang) {
+            // Hide all content sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            
+            // Show selected language content
+            document.getElementById(lang).classList.add('active');
+            
+            // Add active class to clicked button
+            event.target.classList.add('active');
+        }
+    </script>
 </body>
 </html>
